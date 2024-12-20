@@ -127,7 +127,8 @@ if submit:
         "history": st.session_state.history
     })
     st.success(f"Punkte für {person} wurden erfolgreich aktualisiert!")
-    st.experimental_set_query_params(refresh=str(datetime.now()))  # App neuladen
+    st.set_query_params(refresh=str(datetime.now()))  # App neuladen
+
 
 # Historie anzeigen
 st.header("Historie")
