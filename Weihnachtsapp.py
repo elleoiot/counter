@@ -147,7 +147,9 @@ if st.button("🔄 App zurücksetzen"):
     st.session_state.last_contact = {"M": None, "E": None}
     st.session_state.history = []
     st.success("App wurde zurückgesetzt!")
-    st.experimental_rerun()
+    
+    # Ersetze st.experimental_rerun durch st.set_query_params
+    st.set_query_params(refresh=str(datetime.now()))
 
 # Tipp
 st.info("💡 Tipp: Geburtstage bringen Extra-Punkte!")
